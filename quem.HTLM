@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Quieres salir conmigo?</title>
+    <style>
+        body {
+            background-color: violet;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial Black', sans-serif;
+        }
+        .container {
+            text-align: center;
+        }
+        h1 {
+            font-size: 30px;
+            margin-bottom: 20px;
+        }
+        .button {
+            padding: 15px 30px;
+            font-size: 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        #yes-button {
+            background-color: green;
+            color: white;
+        }
+        #no-button {
+            background-color: red;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>¿Quieres salir conmigo?</h1>
+        <button id="yes-button" class="button" onclick="yesClick()">Sí</button>
+        <button id="no-button" class="button" onclick="noClick()">No</button>
+    </div>
+
+    <script>
+        function yesClick() {
+            let day = prompt("¿Qué día puedes?");
+            if (day) {
+                alert(`¡Perfecto! Te espero el ${day}.`);
+            }
+        }
+
+        function noClick() {
+            let noButton = document.getElementById('no-button');
+            let yesButton = document.getElementById('yes-button');
+
+            // Hacer el botón "No" más pequeño
+            noButton.style.transform = 'scale(0.8)';
+
+            // Hacer el botón "Sí" más grande
+            yesButton.style.transform = 'scale(1.2)';
+        }
+    </script>
+</body>
+</html>
